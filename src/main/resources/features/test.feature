@@ -32,6 +32,4 @@ Feature: Subscription
       And user enters verf code
       And user clicks confirm button
     Then page gives error
-    Then close browser
-
 

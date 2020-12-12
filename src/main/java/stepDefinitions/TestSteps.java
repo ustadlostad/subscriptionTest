@@ -1,14 +1,13 @@
 package stepDefinitions;
 
-import org.junit.After;
+import io.cucumber.java.After;
+import io.cucumber.java.Before;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import io.cucumber.java.en_old.Ac;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.interactions.Action;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.Wait;
@@ -19,7 +18,18 @@ import java.util.concurrent.TimeUnit;
 
 public class TestSteps {
 
-    public TestSteps(){
+    Wait wait;
+    WebDriver driver;
+    Actions action;
+    Select select;
+    AccountPage accountPage;
+    LandingPage landingPage ;
+    OrderPage orderPage;
+    PaymentMethodPage paymentMethodPage;
+    SubscriptionPage subscriptionPage;
+
+    @Before
+    public void testInitialization(){
         System.getProperty("webdriver.chrome.driver", "src/main/resources/drivers/chromedriver.exe");
         driver = new ChromeDriver();
         wait = new WebDriverWait(driver, 20);
@@ -33,22 +43,13 @@ public class TestSteps {
         accountPage = new AccountPage(driver,wait);
         paymentMethodPage = new PaymentMethodPage(driver, wait, action);
         orderPage = new OrderPage(driver, wait, action, select);
-    }
 
-    Wait wait;
-    WebDriver driver;
-    Actions action;
-    Select select;
-    AccountPage accountPage;
-    LandingPage landingPage ;
-    OrderPage orderPage;
-    PaymentMethodPage paymentMethodPage;
-    SubscriptionPage subscriptionPage;
+    }
 
 
     @Given("user is on landing page")
     public void user_is_on_landing_page() {
-        driver.navigate().to("https://connect-au.beinsports.com/en");
+        landingPage.navigateToLandingPage();
     }
 
     @And("user click subscription button")
@@ -172,7 +173,7 @@ public class TestSteps {
         orderPage.confirmAlert();
     }
 
-    @Then("close browser")
+    @After
     public void tearDown(){
         driver.quit();
     }

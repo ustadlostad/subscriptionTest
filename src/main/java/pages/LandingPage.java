@@ -13,10 +13,15 @@ public class LandingPage {
     private String subsCriptionButtonXpath = "//a[@class='header-subscribe bc-subscribe visible-md visible-lg menu-subscribe desktop-subscribe']";
     private String subPageUrl = "https://connect-au.beinsports.com/en/subscribe";
     private String currentUrl;
+    private String landingPageUrl = "https://connect-au.beinsports.com/en";
 
     public LandingPage(WebDriver driver, Wait wait){
         this.driver=driver;
         this.wait= wait;
+    }
+
+    public void navigateToLandingPage(){
+        driver.navigate().to(landingPageUrl);
     }
 
     public void clickSubButton(){
@@ -27,5 +32,6 @@ public class LandingPage {
         currentUrl = driver.getCurrentUrl();
         Assert.assertEquals(subPageUrl,currentUrl);
     }
+
 
 }
