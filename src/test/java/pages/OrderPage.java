@@ -43,7 +43,7 @@ public class OrderPage {
     }
 
     public void enterName(){
-        driver.findElement(By.xpath(nameFieldXpath)).sendKeys("Eyüp Sabri Tuncer");
+        driver.findElement(By.xpath(nameFieldXpath)).sendKeys("Eyup Sabri Tuncer");
     }
 
     public void enterCardNumber(){

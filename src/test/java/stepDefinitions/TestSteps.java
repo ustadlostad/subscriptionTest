@@ -30,7 +30,7 @@ public class TestSteps {
 
     @Before
     public void testInitialization(){
-        System.getProperty("webdriver.chrome.driver", "src/main/resources/drivers/chromedriver.exe");
+        System.getProperty("webdriver.chrome.driver", "src/test/resources/drivers/chromedriver.exe");
         driver = new ChromeDriver();
         wait = new WebDriverWait(driver, 20);
         action = new Actions(driver);
