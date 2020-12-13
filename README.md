@@ -34,8 +34,8 @@ After cloning the project "mvn clean verify" command can be used via using comma
 
 Example : <projectFolderLocation> mvn clean verify
 
-Report Location : <projectFolderLocation>
-\subscriptionTest\target\cucumber-report-html\cucumber-html-reports\file-src-test-resources-features-test-feature.html
+Report Location :
+projectFolderLocation\subscriptionTest\target\cucumber-report-html\cucumber-html-reports\file-src-test-resources-features-test-feature.html
 
 Report file need to be opened with a browser.
 
@@ -44,14 +44,14 @@ Report file need to be opened with a browser.
 After cloning the project you need to run TestRunner class or "mvn clean test" command can be used via using command
 line.
 
-Example : <projectFolderLocation> mvn clean test
+Example : projectFolderLocation mvn clean test
 
 ## How to Get Report
 
 After test run "mvn verify -DskipTest" line need to be executed via using command line.
 
-Report Location : <projectFolderLocation>
-\subscriptionTest\target\cucumber-report-html\cucumber-html-reports\file-src-test-resources-features-test-feature.html
+Report Location :
+projectFolderLocation\subscriptionTest\target\cucumber-report-html\cucumber-html-reports\file-src-test-resources-features-test-feature.html
 
 Report file need to be opened with a browser.
 
