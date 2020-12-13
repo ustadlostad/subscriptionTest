@@ -9,7 +9,7 @@ import org.junit.runner.RunWith;
         features="src/test/resources/features",
         glue = {"stepDefinitions"},
         monochrome = true,
-        plugin = {"pretty","html:target/JSONReports"}
+        plugin = {"json:target/cucumber.json"}
         )
 public class TestRunner {
 }
